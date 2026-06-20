@@ -5,5 +5,5 @@ export async function fetchHello() {
     throw new Error("API request failed");
   }
 
-  return res.text();
+  return resolution.text();
 }
