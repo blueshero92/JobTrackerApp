@@ -9,3 +9,4 @@ class JobTrackerAppApplication
 fun main(args: Array<String>) {
     runApplication<JobTrackerAppApplication>(*args)
 }
+
