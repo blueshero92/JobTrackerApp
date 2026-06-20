@@ -5,12 +5,11 @@ import java.util.UUID
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Table;
+import jakarta.persistence.Table
 import jakarta.persistence.GenerationType
 import jakarta.persistence.OneToMany
 import java.time.LocalDateTime
-import org.hibernate.annotations.CreationTimestamp;
-
+import org.hibernate.annotations.CreationTimestamp
 
 @Entity
 @Table(name = "application_users")
@@ -21,7 +20,7 @@ class ApplicationUser {
     var id: UUID? = null
 
     @Column(nullable = false, unique = true, length = 100)
-    var email: String = "";
+    var email: String = ""
 
     @Column(nullable = false, length = 255)
     var password: String = ""

@@ -20,10 +20,10 @@ class Company {
     var id: UUID? = null
 
     @Column(nullable = false, length = 750)
-    var name: String = "";
+    var name: String = ""
 
     @Column(nullable = true, length = 1000)
-    var location: String = "";
+    var location: String = ""
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)

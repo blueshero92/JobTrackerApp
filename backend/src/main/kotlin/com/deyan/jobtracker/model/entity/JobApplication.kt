@@ -11,9 +11,9 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
 import jakarta.persistence.Enumerated
-import jakarta.persistence.EnumType;
+import jakarta.persistence.EnumType
 import org.hibernate.annotations.CreationTimestamp
-import java.time.LocalDateTime;
+import java.time.LocalDateTime
 import java.util.UUID
 
 @Entity
