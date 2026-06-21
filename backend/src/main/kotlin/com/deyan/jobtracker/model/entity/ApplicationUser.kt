@@ -1,13 +1,8 @@
 package com.deyan.jobtracker.model.entity
 
-import jakarta.persistence.Column
+import com.deyan.jobtracker.model.enum.Role
 import java.util.UUID
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Table
-import jakarta.persistence.GenerationType
-import jakarta.persistence.OneToMany
+import jakarta.persistence.*
 import java.time.LocalDateTime
 import org.hibernate.annotations.CreationTimestamp
 
@@ -31,6 +26,14 @@ class ApplicationUser {
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     var createdAt: LocalDateTime? = null
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", length = 50)
+    var role: Role = Role.USER
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id")
+    var company: Company? = null
 
     @OneToMany(mappedBy = "user")
     var jobApplications: MutableList<JobApplication> = mutableListOf()

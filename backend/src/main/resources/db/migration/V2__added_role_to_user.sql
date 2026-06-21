@@ -1,0 +1,2 @@
+ALTER TABLE public.application_users
+ADD COLUMN role SMALLINT NOT NULL DEFAULT 0;

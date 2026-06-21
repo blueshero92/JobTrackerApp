@@ -30,5 +30,8 @@ class Company {
     var createdAt: LocalDateTime? = null
 
     @OneToMany(mappedBy = "company")
-    var jobApplications: MutableList<JobApplication> = mutableListOf()
+    var jobOffers: MutableList<JobOffer> = mutableListOf()
+
+    @OneToMany(mappedBy = "company")
+    var users: MutableList<ApplicationUser> = mutableListOf()
 }

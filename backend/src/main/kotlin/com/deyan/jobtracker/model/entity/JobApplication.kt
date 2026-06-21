@@ -29,8 +29,8 @@ class JobApplication {
     var user: ApplicationUser? = null
 
     @ManyToOne
-    @JoinColumn(name = "company_id")
-    var company: Company? = null
+    @JoinColumn(name = "job_offer_id")
+    var jobOffer: JobOffer? = null
 
     @Column(nullable = false, length = 100)
     var positionTitle: String? = ""
