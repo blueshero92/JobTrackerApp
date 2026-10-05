@@ -11,7 +11,7 @@ class BaseController {
     @GetMapping("/hello")
 
     fun hello(): String {
-        return "hello from backend"
+        return "Hello from backend!"
     }
 
 }
