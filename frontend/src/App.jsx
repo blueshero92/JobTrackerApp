@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
-import { fetchHello } from "./services/api";
-import HelloBox from "./components/HelloBox";
+import { fetchCompanies } from "./services/api";
+import CompanyList from "./components/CompanyList";
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [companies, setCompanies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchHello()
-      .then(setMessage)
-      .catch(console.error);
+    fetchCompanies()
+      .then(setCompanies)
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <div style={{ padding: "20px" }}>
       <h1>JobTracker App</h1>
-      <HelloBox message={message} />
+      <h2>Companies</h2>
+      {loading && <p>Loading...</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {!loading && !error && <CompanyList companies={companies} />}
     </div>
   );
 }
