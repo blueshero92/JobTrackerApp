@@ -6,4 +6,12 @@ export async function fetchHello() {
   }
 
   return resolution.text();
+}export async function fetchCompanies() {
+  const response = await fetch("http://localhost:8080/api/companies");
+
+  if (!response.ok) {
+    throw new Error("Failed to load companies");
+  }
+
+  return response.json();
 }
