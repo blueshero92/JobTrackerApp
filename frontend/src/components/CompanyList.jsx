@@ -1,14 +1,22 @@
 function CompanyList({ companies }) {
   if (companies.length === 0) {
-    return <p>No companies yet.</p>;
+    return (
+      <div className="empty-state">
+        <h3>No companies yet</h3>
+        <p>Companies you add will show up here.</p>
+      </div>
+    );
   }
 
   return (
-    <ul>
+    <ul className="card-list">
       {companies.map((company) => (
-        <li key={company.id}>
-          <strong>{company.name}</strong>
-          {company.location && ` - ${company.location}`}
+        <li key={company.id} className="company-card">
+          <div className="avatar">{company.name.charAt(0).toUpperCase()}</div>
+          <div>
+            <h3>{company.name}</h3>
+            <p>{company.location || "Location not specified"}</p>
+          </div>
         </li>
       ))}
     </ul>
