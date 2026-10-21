@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import CompaniesPage from "./pages/CompaniesPage";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState("home");
 
   return (
-    <div className="app">
-      <Navbar page={page} onNavigate={setPage} />
-      <main className="content">
-        {page === "home" && <HomePage onNavigate={setPage} />}
-        {page === "companies" && <CompaniesPage />}
-      </main>
-      <footer className="footer">JobTracker &middot; Built with React &amp; Spring Boot</footer>
-    </div>
+      <BrowserRouter>
+          <div className="app">
+              {}
+              <Navbar />
+
+              <main className="content">
+                  <Routes>
+                      {}
+                      <Route path="/" element={<HomePage />} />
+                      <Route path="/companies" element={<CompaniesPage />} />
+                  </Routes>
+              </main>
+
+              <footer className="footer">
+                  JobTracker &middot; Built with React &amp; Spring Boot
+              </footer>
+          </div>
+      </BrowserRouter>
   );
 }
 

@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 const features = [
   {
     title: "Track applications",
@@ -39,12 +41,12 @@ function HomePage({ onNavigate }) {
           place, so you always know what comes next.
         </p>
         <div className="button-row">
-          <button className="btn btn-primary" onClick={() => onNavigate("companies")}>
+          <Link className="btn btn-primary" to="/companies" onClick={onNavigate}  style={{ textDecoration: 'none' }}>
             Browse companies &rarr;
-          </button>
-          <button className="btn btn-ghost" disabled title="Coming soon">
+          </Link>
+          <Link className="btn btn-ghost" disabled title="Coming soon" style={{ textDecoration: 'none', cursor: 'not-allowed' }}>
             My applications
-          </button>
+          </Link>
         </div>
 
         <div className="pipeline" aria-label="Application pipeline">
