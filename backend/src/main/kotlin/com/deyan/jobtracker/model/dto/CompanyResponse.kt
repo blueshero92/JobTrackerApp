@@ -5,5 +5,5 @@ import java.util.UUID
 data class CompanyResponse(
     val id: UUID?,
     val name: String,
-    val location: String
+    val location: String?
 )
