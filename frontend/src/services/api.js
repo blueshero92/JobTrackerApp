@@ -7,3 +7,13 @@ export async function fetchCompanies() {
 
   return response.json();
 }
+
+export async function fetchJobOffers() {
+  const response = await fetch("http://localhost:8080/api/jobOffers");
+
+  if (!response.ok) {
+    throw new Error("Failed to load job offers");
+  }
+
+  return response.json();
+}

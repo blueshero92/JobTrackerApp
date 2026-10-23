@@ -8,6 +8,7 @@ function Navbar() {
   const links = [
     { id: "home", path: "/", label: "Home" },
     { id: "companies", path: "/companies", label: "Companies" },
+    {id: "jobOffers", path: "/jobOffers", label: "Job Offers" },
   ];
 
   return (
